@@ -1,1 +1,40 @@
-{     "devDependencies": {         "webpack-visualizer-plugin": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-webpack-visualizer-plugin",     "homepage": "https://github.com/npmtest/node-npmtest-webpack-visualizer-plugin",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-webpack-visualizer-plugin.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [webpack-visualizer-plugin (v0.1.11)](https://github.com/chrisbateman/webpack-visualizer#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-webpack-visualizer-plugin.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-webpack-visualizer-plugin) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-webpack-visualizer-plugin.svg)](https://travis-ci.org/npmtest/node-npmtest-webpack-visualizer-plugin)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "webpack-visualizer-plugin": "*"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-webpack-visualizer-plugin",
+    "keywords": [
+        "coverage",
+        "test",
+        "webpack-visualizer-plugin"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_webpack_visualizer_plugin.js",
+    "name": "npmtest-webpack-visualizer-plugin",
+    "nameAlias": "npmtest_webpack_visualizer_plugin",
+    "nameOriginal": "npmtest-webpack-visualizer-plugin",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-webpack-visualizer-plugin.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
